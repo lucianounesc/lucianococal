@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Missão C — Aprendendo Programação</title>
+<style>
+:root{--bg:#f6f8fc;--card:#fff;--text:#172033;--muted:#64748b;--blue:#4f46e5;--blue2:#7c3aed;--yellow:#f59e0b;--green:#16a34a;--border:#e2e8f0;--dark:#111827}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+header{background:linear-gradient(135deg,#312e81,#7c3aed);color:white;padding:38px 20px 70px;overflow:hidden}.hero{max-width:1100px;margin:auto}.badge{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.22);padding:6px 13px;border-radius:999px;font-size:13px}.hero h1{font-size:clamp(40px,7vw,70px);line-height:1;margin:18px 0 14px}.hero p{font-size:19px;max-width:700px;color:#ede9fe}.rocket{font-size:48px;float:right;margin-top:15px}
+.layout{max-width:1100px;margin:-35px auto 50px;padding:0 18px;display:grid;grid-template-columns:230px 1fr;gap:20px}nav{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:16px;height:max-content;position:sticky;top:15px;box-shadow:0 10px 30px #312e8112}nav strong{display:block;margin-bottom:8px}nav a{display:block;color:var(--muted);text-decoration:none;padding:9px 10px;border-radius:9px;font-size:14px}nav a:hover{background:#eef2ff;color:var(--blue)}.search{width:100%;padding:9px;border:1px solid var(--border);border-radius:9px;margin-bottom:8px}
+main{min-width:0}.card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:27px;margin-bottom:18px;box-shadow:0 7px 24px #0f172a08}.card h2{margin-top:0;font-size:28px}.intro{font-size:17px;color:var(--muted)}
+.mission{display:grid;grid-template-columns:1fr 1fr;gap:14px}.mission-card{padding:20px;border:1px solid var(--border);border-radius:15px;background:#fafafa}.mission-card .icon{font-size:30px}.mission-card h3{margin:5px 0}.mission-card p{color:var(--muted);margin:0}
+.explain{background:#eef2ff;border-left:5px solid var(--blue);padding:14px 17px;border-radius:10px;margin:18px 0}.fun{background:#fffbeb;border-left-color:var(--yellow)}.success{background:#f0fdf4;border-left-color:var(--green)}
+pre{background:var(--dark);color:#e5e7eb;padding:18px;border-radius:12px;overflow:auto;position:relative;font-size:14px}code{font-family:"SFMono-Regular",Consolas,monospace}.copy{position:absolute;right:9px;top:9px;background:#374151;color:white;border:0;border-radius:7px;padding:6px 9px;cursor:pointer}
+button{font-family:inherit}.challenge{background:linear-gradient(135deg,#f5f3ff,#eef2ff);border:1px solid #c7d2fe;border-radius:15px;padding:20px;margin-top:18px}.challenge h3{margin-top:0}.answer{display:none;margin-top:14px}.btn{background:var(--blue);color:white;border:0;border-radius:9px;padding:10px 15px;font-weight:700;cursor:pointer}.btn:hover{background:#4338ca}
+.quiz{border:1px solid var(--border);border-radius:14px;padding:18px;margin:12px 0}.quiz label{display:block;padding:7px;cursor:pointer}.result{font-weight:700;margin-top:10px}.stars{font-size:26px;letter-spacing:3px}
+footer{text-align:center;color:var(--muted);padding:25px}
+@media(max-width:800px){.layout{grid-template-columns:1fr;margin-top:18px}nav{position:relative;top:auto}.mission{grid-template-columns:1fr}.rocket{float:none}}
+</style>
+</head>
+<body>
+<header>
+<div class="hero">
+<span class="badge">💻 8º e 9º ano • Introdução à Programação</span>
+<div class="rocket">🚀</div>
+<h1>Missão C</h1>
+<p>Aprenda a programar em C através de exemplos, desafios e pequenas missões. Aqui você vai descobrir que programar pode ser divertido!</p>
+</div>
+</header>
+
+<div class="layout">
+<nav>
+<strong>🗺️ Mapa da missão</strong>
+<input class="search" id="search" placeholder="🔎 Procurar...">
+<a href="#inicio">🏠 Início</a>
+<a href="#missao1">🚀 Missão 1 — C</a>
+<a href="#missao2">📦 Missão 2 — Variáveis</a>
+<a href="#missao3">⌨️ Missão 3 — Entrada e saída</a>
+<a href="#missao4">🤔 Missão 4 — Decisões</a>
+<a href="#missao5">🔄 Missão 5 — Repetições</a>
+<a href="#desafios">🏆 Desafios finais</a>
+</nav>
+
+<main>
+<section class="card searchable" id="inicio">
+<h2>👋 Bem-vindo!</h2>
+<p class="intro">Você está prestes a aprender os primeiros passos para criar programas de computador usando a linguagem C.</p>
+<div class="explain"><strong>Como funciona?</strong><br>Leia a explicação, veja o exemplo e depois tente resolver o desafio. Não tenha medo de errar: programar é justamente aprender testando!</div>
+<div class="mission">
+<div class="mission-card"><div class="icon">🎯</div><h3>Aprenda</h3><p>Descubra novos comandos de programação.</p></div>
+<div class="mission-card"><div class="icon">💻</div><h3>Teste</h3><p>Observe os exemplos e tente modificá-los.</p></div>
+<div class="mission-card"><div class="icon">🧩</div><h3>Resolva</h3><p>Complete os desafios de cada missão.</p></div>
+<div class="mission-card"><div class="icon">🏆</div><h3>Conquiste</h3><p>Termine o quiz e veja quantos pontos consegue.</p></div>
+</div>
+</section>
+
+<section class="card searchable" id="missao1">
+<h2>🚀 Missão 1 — Conhecendo a linguagem C</h2>
+<p>Imagine que você precisa ensinar um computador a fazer alguma coisa. Para isso, precisamos escrever instruções que ele consiga entender.</p>
+<div class="fun"><strong>💡 Curiosidade:</strong> C é uma linguagem muito importante na história da computação e ainda é utilizada em muitos projetos.</div>
+<h3>Seu primeiro programa</h3>
+<pre><button class="copy" onclick="copyCode(this)">Copiar</button><code>#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Olá, mundo!");
+    return 0;
+}</code></pre>
+<p>O comando <code>printf()</code> mostra uma mensagem na tela.</p>
+<div class="challenge"><h3>🧩 Desafio</h3><p>Modifique o programa para mostrar seu nome na tela.</p><button class="btn" onclick="toggle('r1')">Ver uma resposta possível</button><div class="answer" id="r1"><pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Meu nome é Ana!");
+    return 0;
+}</code></pre></div></div>
+</section>
+
+<section class="card searchable" id="missao2">
+<h2>📦 Missão 2 — As caixas mágicas: variáveis</h2>
+<p>Uma variável é como uma <strong>caixa</strong> onde podemos guardar uma informação.</p>
+<div class="mission">
+<div class="mission-card">📦 <strong>int</strong><br><span style="color:#64748b">guarda números inteiros</span></div>
+<div class="mission-card">📦 <strong>float</strong><br><span style="color:#64748b">guarda números com casas decimais</span></div>
+<div class="mission-card">📦 <strong>char</strong><br><span style="color:#64748b">guarda um caractere</span></div>
+<div class="mission-card">📦 <strong>char[]</strong><br><span style="color:#64748b">pode representar um texto</span></div>
+</div>
+<pre><button class="copy" onclick="copyCode(this)">Copiar</button><code>int idade = 14;
+float altura = 1.65;
+char letra = 'A';
+
+printf("%d\n", idade);
+printf("%.2f\n", altura);
+printf("%c\n", letra);</code></pre>
+<div class="explain"><strong>🎮 Pense em um jogo:</strong> podemos ter uma variável chamada <code>pontos</code> para guardar a pontuação do jogador.</div>
+<div class="challenge"><h3>🧩 Desafio</h3><p>Crie uma variável chamada <code>pontos</code>, coloque o valor 100 nela e mostre o valor na tela.</p><button class="btn" onclick="toggle('r2')">Ver resposta</button><div class="answer" id="r2"><pre><code>int pontos = 100;
+printf("%d", pontos);</code></pre></div></div>
+</section>
+
+<section class="card searchable" id="missao3">
+<h2>⌨️ Missão 3 — Conversando com o computador</h2>
+<p>Até agora o programa só falava conosco. Agora vamos fazer o computador <strong>receber informações</strong>.</p>
+<h3>📢 printf() — computador fala</h3>
+<pre><button class="copy" onclick="copyCode(this)">Copiar</button><code>printf("Qual é a sua idade?");</code></pre>
+<h3>👂 scanf() — computador escuta</h3>
+<pre><button class="copy" onclick="copyCode(this)">Copiar</button><code>int idade;
+
+printf("Digite sua idade: ");
+scanf("%d", &amp;idade);
+
+printf("Você tem %d anos!", idade);</code></pre>
+<div class="fun"><strong>🎤 Imagine assim:</strong> <code>printf()</code> é o computador falando e <code>scanf()</code> é o computador ouvindo.</div>
+<div class="challenge"><h3>🧩 Desafio</h3><p>Faça um programa que pergunte o nome e a idade do jogador.</p><button class="btn" onclick="toggle('r3')">Ver exemplo</button><div class="answer" id="r3"><pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    char nome[30];
+    int idade;
+
+    printf("Digite seu nome: ");
+    scanf("%29s", nome);
+
+    printf("Digite sua idade: ");
+    scanf("%d", &amp;idade);
+
+    printf("Olá, %s! Você tem %d anos.", nome, idade);
+
+    return 0;
+}</code></pre></div></div>
+</section>
+
+<section class="card searchable" id="missao4">
+<h2>🤔 Missão 4 — O computador precisa tomar decisões</h2>
+<p>Programas podem tomar decisões usando condições.</p>
+<div class="explain"><strong>Exemplo:</strong> se a pontuação for maior ou igual a 100, o jogador ganhou um prêmio. Caso contrário, precisa continuar jogando.</div>
+<pre><button class="copy" onclick="copyCode(this)">Copiar</button><code>if (pontos &gt;= 100) {
+    printf("🏆 Você ganhou!");
+} else {
+    printf("Continue tentando!");
+}</code></pre>
+<h3>⚖️ Comparações</h3>
+<div class="mission">
+<div class="mission-card"><code>==</code> igual</div><div class="mission-card"><code>!=</code> diferente</div>
+<div class="mission-card"><code>&gt;</code> maior</div><div class="mission-card"><code>&lt;</code> menor</div>
+<div class="mission-card"><code>&gt;=</code> maior ou igual</div><div class="mission-card"><code>&lt;=</code> menor ou igual</div>
+</div>
+<div class="challenge"><h3>🧩 Desafio</h3><p>Leia a idade de uma pessoa e informe se ela pode votar ou ainda não tem idade para votar. <small>(Considere 16 anos como idade mínima para este exercício.)</small></p><button class="btn" onclick="toggle('r4')">Ver resposta</button><div class="answer" id="r4"><pre><code>int idade;
+
+scanf("%d", &amp;idade);
+
+if (idade &gt;= 16) {
+    printf("Pode votar.");
+} else {
+    printf("Ainda não pode votar.");
+}</code></pre></div></div>
+</section>
+
+<section class="card searchable" id="missao5">
+<h2>🔄 Missão 5 — Fazendo o computador repetir</h2>
+<p>Imagine pedir para alguém escrever os números de 1 até 100. Seria muito cansativo fazer isso manualmente! Com uma repetição, o computador faz o trabalho.</p>
+<h3>🔁 for</h3>
+<pre><button class="copy" onclick="copyCode(this)">Copiar</button><code>for (int i = 1; i &lt;= 10; i++) {
+    printf("%d\n", i);
+}</code></pre>
+<p>O programa começa em 1, continua enquanto <code>i &lt;= 10</code> e aumenta 1 a cada repetição.</p>
+<h3>🔁 while</h3>
+<pre><button class="copy" onclick="copyCode(this)">Copiar</button><code>int contador = 1;
+
+while (contador &lt;= 5) {
+    printf("%d\n", contador);
+    contador++;
+}</code></pre>
+<div class="fun"><strong>🎮 Desafio de jogo:</strong> você pode usar uma repetição para mostrar várias fases, contar pontos ou repetir uma pergunta.</div>
+<div class="challenge"><h3>🧩 Desafio</h3><p>Mostre na tela os números de 1 até 20 usando <code>for</code>.</p><button class="btn" onclick="toggle('r5')">Ver resposta</button><div class="answer" id="r5"><pre><code>for (int i = 1; i &lt;= 20; i++) {
+    printf("%d\n", i);
+}</code></pre></div></div>
+</section>
+
+<section class="card searchable" id="desafios">
+<h2>🏆 Desafios finais</h2>
+<p class="intro">Agora vamos testar o que você aprendeu!</p>
+<div class="quiz">
+<strong>1. Qual comando mostra uma mensagem na tela?</strong>
+<label><input type="radio" name="q1" value="0"> scanf()</label>
+<label><input type="radio" name="q1" value="1"> printf()</label>
+<label><input type="radio" name="q1" value="0"> if</label>
+</div>
+<div class="quiz">
+<strong>2. Qual estrutura usamos para tomar uma decisão?</strong>
+<label><input type="radio" name="q2" value="0"> for</label>
+<label><input type="radio" name="q2" value="1"> if</label>
+<label><input type="radio" name="q2" value="0"> printf()</label>
+</div>
+<div class="quiz">
+<strong>3. Qual estrutura é muito usada quando queremos repetir algo várias vezes?</strong>
+<label><input type="radio" name="q3" value="0"> scanf()</label>
+<label><input type="radio" name="q3" value="0"> char</label>
+<label><input type="radio" name="q3" value="1"> for</label>
+</div>
+<div class="quiz">
+<strong>4. Para que serve uma variável?</strong>
+<label><input type="radio" name="q4" value="1"> Guardar uma informação</label>
+<label><input type="radio" name="q4" value="0"> Desligar o computador</label>
+<label><input type="radio" name="q4" value="0"> Apagar o programa</label>
+</div>
+<button class="btn" onclick="quiz()">🎯 Conferir minhas respostas</button>
+<div class="result" id="result"></div>
+</section>
+
+<section class="card">
+<h2>🌟 Parabéns!</h2>
+<p>Se você chegou até aqui, já conhece quatro ideias fundamentais da programação:</p>
+<div class="stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
+<ul><li>Guardar informações em variáveis;</li><li>Conversar com o usuário;</li><li>Tomar decisões;</li><li>Repetir tarefas.</li></ul>
+<div class="success"><strong>🚀 Próxima missão:</strong> funções, vetores, strings e criação de pequenos jogos em C!</div>
+</section>
+</main>
+</div>
+<footer>💻 Missão C — Material introdutório de programação para 8º e 9º ano</footer>
+
+<script>
+function copyCode(btn){navigator.clipboard.writeText(btn.parentElement.querySelector('code').innerText).then(()=>{let t=btn.innerText;btn.innerText='Copiado!';setTimeout(()=>btn.innerText=t,1200)})}
+function toggle(id){let e=document.getElementById(id);e.style.display=e.style.display==='block'?'none':'block'}
+function quiz(){let score=0;for(let i=1;i<=4;i++){let a=document.querySelector('input[name="q'+i+'"]:checked');if(a&&a.value==='1')score++}let msg=score===4?'🏆 Perfeito! Você acertou tudo!':score>=3?'🌟 Muito bem! Você está dominando o conteúdo!':score>=2?'👍 Bom trabalho! Revise as missões e tente novamente.':'💪 Continue praticando! Você vai conseguir!';document.getElementById('result').innerHTML=msg+'<br>Você acertou <strong>'+score+' de 4</strong> questões.'}
+document.getElementById('search').addEventListener('input',function(){let q=this.value.toLowerCase();document.querySelectorAll('.searchable').forEach(e=>e.style.display=(!q||e.innerText.toLowerCase().includes(q))?'block':'none')});
+</script>
+</body>
+</html>
